@@ -1,0 +1,218 @@
+<nb-layout>
+  
+    <!-- nav bar start -->
+    <nb-layout-header fixed>
+      <a href="#" (click)="toggle()"><i class="nb-menu"><nb-icon icon="menu-outline" [options]="{ animation: { type: 'pulse' } }"></nb-icon></i></a>
+      <div class="header-container">
+      <nb-actions size="medium"  >
+         <nb-action icon="email-outline"
+                   
+                   title="Invitations"
+                   link="/ViewInvitation"
+                   >
+        </nb-action>
+        <nb-action icon="message-circle-outline"
+                   title="Announcements"
+                   link="/ViewAnnouncement">
+        </nb-action>
+        <nb-action id="user">
+          <nb-user name="{{Person.Name}} {{Person.Surname}}" ></nb-user>
+        </nb-action>
+        <nb-action>
+            <button type="button" nbButton class="btn btn-info" (click)="Logout()">Logout</button>
+        </nb-action>
+       </nb-actions>
+      </div>
+
+
+    </nb-layout-header>
+
+    <nb-sidebar state="compacted">
+            <nb-menu [items]="items"></nb-menu>
+    </nb-sidebar>
+
+    <!-- nav bar end -->
+    <nb-layout-column class="colored-column-basic">
+
+<form #Overview="ngForm" (ngSubmit)="onSubmit(Overview.value)" >
+  <nb-card>
+    <nb-card-header>
+      <h1>Overview of Structure Report  <button class="next-button" nbButton routerLink="/HomecellNotesAdd" style="float: right;  background: teal;color: white; border-color: teal;"> <nb-icon icon="save-outline"></nb-icon> Generate PDF</button></h1>
+    </nb-card-header>
+  <nb-card-body>
+      <div >
+      <label style="margin-right: 10px;" >Structure: </label><nb-select placeholder="Select Structure" style="margin-right: 10px;">
+          <nb-option value="">Student Zone 1</nb-option>
+          <nb-option value="0">Option 0</nb-option>
+          <nb-option value="1">Option 1</nb-option>
+          <nb-option value="2">Option 2</nb-option>
+          <nb-option value="3">Option 3</nb-option>
+          <nb-option value="4">Option 4</nb-option>
+        </nb-select>
+  
+          <label style="margin-right: 10px;">From:</label><input type="date" nbInput  shape="rectangle" placeholder="Rectangle" style="margin-right: 10px;">
+          <label style="margin-right: 10px;">To:</label><input type="date" nbInput  shape="rectangle" placeholder="Rectangle" style="margin-right: 10px;">
+          <button class="next-button" nbButton  style="float: right; background: teal;color: white; border-color: teal;" (click)='submitRequets()'>Generate Report</button>
+        </div><br>
+      <hr>
+      <br><br>
+      <br>
+      <div style="text-align: center;">
+        <div >
+          <p>{{pleaseWait}}</p>
+          <nb-card>
+            <nb-card-header>Overview of Structure: </nb-card-header>
+            <nb-card-body>
+  
+              <div *ngIf="chart">
+                <canvas id="canvas">{{ chart }}</canvas>
+              </div>
+  
+            </nb-card-body>
+          </nb-card>
+        </div>
+        </div><br><br>
+  
+      <div style="text-align: left; background-color: teal;"><label><b>Structure </b></label></div>
+     <br>
+         <table class="table">
+        <thead>
+          <tr>
+            <th>Total</th>
+            <th *ngFor='let m of month'>{{m}}</th>
+  
+          </tr>
+        </thead>
+  
+  
+        <tbody>
+          <tr>
+  
+            <td><strong>Church Attendance</strong></td>
+             <td *ngFor='let m of ChurchAtt'>{{m}}</td>
+  
+  
+         </tr>
+          <tr>
+  
+            <td><strong>Homecell Attendance</strong></td>
+             <td *ngFor='let m of HCAttendance'>{{m}}</td>
+  
+  
+         </tr>
+          <tr>
+  
+            <td><strong>Discipleship Course Attendance</strong></td>
+             <td *ngFor='let m of Discipleship '>{{m}}</td>
+  
+  
+         </tr>
+          <tr>
+  
+            <td><strong>NMO Attendance</strong></td>
+             <td *ngFor='let m of nmo'>{{m}}</td>
+  
+  
+         </tr>
+  
+  
+        </tbody>
+    </table>
+    <div style="text-align: left; background-color: teal;"><b>Homecell Attendance</b></div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th></th>
+          <td *ngFor='let m of month'><strong>{{m}}</strong></td>
+  
+        </tr>
+      </thead>
+  
+  
+      <tbody>
+        <tr>
+  
+          <td><strong>Members</strong></td>
+          <td *ngFor='let m of HCMembers'>{{m}}</td>
+  
+       </tr>
+        <tr>
+  
+          <td><strong>Leaders</strong></td>
+          <td *ngFor='let m of HCLeaders'>{{m}}</td>
+  
+       </tr>
+        <tr>
+  
+          <td><strong>Visitors</strong></td>
+          <td *ngFor='let m of HCV'>{{m}}</td>
+  
+       </tr>
+        <tr>
+  
+          <td><strong>First Time Visitors</strong></td>
+          <td *ngFor='let m of HCFTV'>{{m}}</td>
+  
+       </tr>
+        <tr>
+  
+          <td><strong>Salvations</strong></td>
+          <td *ngFor='let m of HCSalvations'>{{m}}</td>
+  
+       </tr>
+  
+  
+  
+      </tbody>
+  </table>
+  <div style="text-align: left; background-color: teal;"><b>Church Attendance</b></div>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <td *ngFor='let m of month'><strong>{{m}}</strong></td>
+      </tr>
+    </thead>
+  
+  
+    <tbody>
+      <tr>
+  
+        <td><strong>Members</strong></td>
+        <td *ngFor='let m of CMembers'>{{m}}</td>
+  
+     </tr>
+      <tr>
+  
+        <td><strong>Leaders</strong></td>
+        <td *ngFor='let m of CLeaders'>{{m}}</td>
+  
+     </tr>
+      <tr>
+  
+        <td><strong>Visitors</strong></td>
+        <td *ngFor='let m of CV'>{{m}}</td>
+  
+     </tr>
+      <tr>
+  
+        <td><strong>First Time Visitors</strong></td>
+        <td *ngFor='let m of CFTV'>{{m}}</td>
+  
+     </tr>
+      <tr>
+  
+        <td><strong>Salvations</strong></td>
+        <td *ngFor='let m of CSalvations'>{{m}}</td>
+  
+     </tr>
+  
+  
+  
+    </tbody>
+  </table>
+  </nb-card-body>
+  </nb-card>
+  </form></nb-layout-column>
+  </nb-layout>

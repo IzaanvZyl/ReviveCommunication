@@ -1,0 +1,64 @@
+<nb-layout>
+    
+    <!-- nav bar start -->
+    <nb-layout-header fixed>
+        <a href="#" (click)="toggle()"><i class="nb-menu"><nb-icon icon="menu-outline" [options]="{ animation: { type: 'pulse' } }"></nb-icon></i></a>
+        <div class="header-container">
+        <nb-actions size="medium"  >
+           <nb-action icon="email-outline"
+                     
+                     title="Invitations"
+                     link="/ViewInvitation"
+                     >
+          </nb-action>
+          <nb-action icon="message-circle-outline"
+                     title="Announcements"
+                     link="/ViewAnnouncement">
+          </nb-action>
+          <nb-action id="user">
+            <nb-user name="{{Person.Name}} {{Person.Surname}}" ></nb-user>
+          </nb-action>
+          <nb-action>
+              <button type="button" nbButton class="btn btn-info" (click)="Logout()">Logout</button>
+          </nb-action>
+         </nb-actions>
+        </div>
+  
+  
+      </nb-layout-header>
+  
+      <nb-sidebar state="compacted">
+              <nb-menu [items]="items"></nb-menu>
+      </nb-sidebar>
+  
+      <!-- nav bar end -->
+      <nb-layout-column class="colored-column-basic">
+<nb-card>
+    
+        <nb-card-header><b>Approve Member</b></nb-card-header><br><br>
+        <nb-card-body>
+        <!--<nb-form-field>
+                <input type="text" nbInput placeholder="Search">
+                <button nbButton><nb-icon nbPrefix icon="search-outline" pack="eva"></nb-icon></button>
+            </nb-form-field><br><br><br>-->
+            <table>
+                <tr>
+                    <th style="text-align: center;">Name</th>
+                    <th style="text-align: center;">Surname</th>
+                    <th style="text-align: center;">Approve</th>
+                </tr>
+                <tr *ngFor="let member of members">
+                    <td>{{member.Name}} <input value="{{member.PersonID}}" hidden></td>
+                    <td>{{member.Surname}}</td>
+                    <td>
+                        <input type="submit" nbButton value="Approve" (click)="onSubmit(member)"  fullWidth> 
+                    </td>
+                <tr>                
+            </table>
+            <br>
+            <button nbButton style="float: right;" routerLink="/Members">Cancel</button>
+        </nb-card-body>
+    
+</nb-card></nb-layout-column>
+
+</nb-layout>

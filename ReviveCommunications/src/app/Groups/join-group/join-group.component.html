@@ -1,0 +1,90 @@
+<nb-layout>
+  
+    <!-- nav bar start -->
+    <nb-layout-header fixed>
+      <a href="#" (click)="toggle()"><i class="nb-menu"><nb-icon icon="menu-outline" [options]="{ animation: { type: 'pulse' } }"></nb-icon></i></a>
+      <div class="header-container">
+      <nb-actions size="medium"  >
+         <nb-action icon="email-outline"
+                   
+                   title="Invitations"
+                   link="/ViewInvitation"
+                   >
+        </nb-action>
+        <nb-action icon="message-circle-outline"
+                   title="Announcements"
+                   link="/ViewAnnouncement">
+        </nb-action>
+        <nb-action id="user">
+          <nb-user name="{{Person.Name}} {{Person.Surname}}" ></nb-user>
+        </nb-action>
+        <nb-action>
+            <button type="button" nbButton class="btn btn-info" (click)="Logout()">Logout</button>
+        </nb-action>
+       </nb-actions>
+      </div>
+
+
+    </nb-layout-header>
+
+    <nb-sidebar state="compacted">
+            <nb-menu [items]="items"></nb-menu>
+    </nb-sidebar>
+
+    <!-- nav bar end -->
+    <nb-layout-column class="colored-column-basic">
+
+<form #groupChoice="ngForm"   (ngSubmit)="onSubmit(groupChoice.value)">
+    <h2 style="text-align: center;">Join Us!</h2>
+
+          <nb-card>
+            <nb-card-header><h4 style="text-align: center;">You can join up to 3 groups!</h4></nb-card-header>
+            <nb-card-body>
+
+              <div class="row">
+                <input type="text"  name="PersonID" ngModel #PersonID="ngModel" [(ngModel)]="Person.PersonID" hidden >
+                
+                <br>
+                <br>
+                <label for="ZonePastor">Zone Pastor</label>
+                <input type="text"  required type="text"style="margin-left:132px" name="ZonePastor" ngModel #ZonePastor="ngModel"   nbInput id="ZonePastor"  placeholder="eg. 1">
+                <br>
+                <br>
+                <label for="Homecell">Homecell Leader</label>
+                <input type="text"  required type="text" style="margin-left:100px" name="Homecell" ngModel #Homecell="ngModel"   nbInput id="Homecell"  placeholder="eg. 1">
+                <br>
+                <br>
+                <label for="SpiritualGiftTestSession">Spiritual Gift Test Session</label>
+                <input type="text"  required type="text"style="margin-left:45px" name="SpiritualGiftTestSession" ngModel #SpiritualGiftTestSession="ngModel"   nbInput id="SpiritualGiftTestSession"  placeholder="eg. Teacher">
+                <br>
+                <br>
+                <label for="HighestSpiritualGifts">Highest Spiritual Gifts</label>
+                <input type="text"  required type="text" style="margin-left:70px" name="HighestSpiritualGifts" ngModel #HighestSpiritualGifts="ngModel"   nbInput id="Homecell"  placeholder="eg. Teaching">
+                <br>
+                <br>
+              </div>
+
+
+              <div class="groups">
+              <nb-select placeholder="Group 1" name="Group1" [(ngModel)]="selectedGroup1">
+                <nb-option *ngFor="let g of Groups" [value]="g">{{g.GroupTypeName}}</nb-option>
+              </nb-select>
+              <nb-select placeholder="Group 2" name="Group2" [(ngModel)]="selectedGroup2">
+                <nb-option *ngFor="let g of Groups" [value]="g">{{g.GroupTypeName}}</nb-option>
+              </nb-select>
+              <nb-select placeholder="Group 3" name="Group3" [(ngModel)]="selectedGroup3">
+                <nb-option *ngFor="let g of Groups" [value]="g">{{g.GroupTypeName}}</nb-option>
+              </nb-select>
+            </div>
+            </nb-card-body>
+          </nb-card>
+
+
+        <div style="text-align: center;">
+            <button nbButton style="margin: 15px;" type="submit">Join</button>
+            <button nbButton style="margin: 15px;">Transfer</button>
+            <button nbButton style="margin: 15px;">Back</button>
+        </div>
+</form>
+</nb-layout-column>
+</nb-layout>

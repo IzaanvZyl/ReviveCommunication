@@ -1,0 +1,160 @@
+<nb-layout class="agtergrond">
+    
+ 
+      <nb-layout-column class="colored-column-basic">
+  
+<form [formGroup]="registerMember" (ngSubmit)="onSubmitPerson(registerMember.value)">
+    
+        <nb-layout-column class="colored-column-basic">
+          
+      <!-- Content on page START -->
+      <nb-card>    
+        <nb-card-header style="background-color:#252547;" >      
+            <div style="align-content: center;">
+                <h3 style=" text-align: center;">Register to become a member</h3>
+                </div>
+        </nb-card-header> 
+        <nb-card-body>
+            <nb-stepper orientation="vertical" disableStepNavigation>
+               
+                    <nb-step label="Personal Information">
+                        <div style="margin-left: 200px ;">          
+                            <p style="background-color: teal; color: white; text-align: center; " >Tell us about yourself</p>
+                            <div>
+                                <input type="text" nbInput shape="rectangle" name="Name" placeholder="Name" class="form-control" formControlName="Name">
+      
+                                <input type="text" nbInput shape="rectangle" name="Surname" placeholder="Surname" style="float: right;" class="form-control" formControlName="Surname">
+                                <br><br>  
+                                <label>Date of Birth</label>
+                                <br>
+                                <input type="date" nbInput name="DateOfBirth"   placeholder="Date of Birth" shape="rectangle" class="form-control" formControlName="DateOfBirth"><br><br>
+                
+                                <p style="background-color: teal; color: white; text-align: center;">We would like to come and visit you</p>
+                                <textarea nbInput fullWidth placeholder="Residential Address" name="Address" style="height: 100px;" class="form-control" formControlName="Address"></textarea><br><br>
+                                <input type="text" nbInput shape="rectangle" class="form-control" formControlName="City" name="City" placeholder="City">
+      
+                                <input type="text" nbInput shape="rectangle" class="form-control" formControlName="Suburb" name="Suburb" placeholder="Suburb" style="float: right;">
+                                <br><br>
+                                <p style="background-color: teal; color: white; text-align: center;">How can we contact you?</p>
+                  
+                                <input type="text" nbInput shape="rectangle" placeholder="Cellphone" class="form-control" formControlName="Number" >
+                                <input type="text" nbInput shape="rectangle" placeholder="E-mail" style="float: right;" class="form-control" formControlName="Email">
+                            </div><br><br>          
+              
+                            <div style="float: right">
+                                <button class="prev-button" type="button" nbButton nbStepperPrevious style="margin-right: 5px;">prev</button>
+                                <button class="next-button" type="button" nbButton nbStepperNext>next</button>
+                            </div>
+                        </div>
+                    </nb-step>
+      
+                    <nb-step label="Login Details">
+                        <p style="background-color: teal; color: white;">Please provide the details that you want to log in with.</p>
+                        <input type="text" nbInput fullWidth  placeholder="Username" required class="form-control" formControlName="Username">
+                        <br><br>
+                        <input type="password" nbInput fullWidth  placeholder="Password" class="form-control" formControlName="Password" required>
+                        <br><br>
+                        <input type="password" nbInput fullWidth  placeholder="Confirm Password" required><br><br>
+                        <div style="float: right;">
+                            <button class="prev-button" type="button" nbButton nbStepperPrevious style="margin-right:5px">prev</button>
+                            <button class="next-button" type="button" nbButton nbStepperNext>next</button>
+                        </div>                
+                    </nb-step>
+                
+      
+                <!-- <form [formGroup]="childForm">
+                    <nb-step label="Children's Details">
+                        <div style="margin-left: 200px ;">
+                            <button nbButton  (click)="ViewChildren()">Do you have children?</button>
+                        </div>  
+                        <div style="margin-left: 200px ;" id="ChildDiv" style="display: none;">                  
+                            <p style="background-color: teal; color: white;">Please provide us with your children's details. Complete all the required fields
+                            </p> 
+                            <br>
+                            <p></p>
+                            <br>                 
+                      
+                            <input type="text" placeholder="Child Name"  style="margin-right: 150px;" fullWidth required nbInput id="name" >
+                            <br><br>
+          
+                            <input type="text" placeholder="Child Surname"  style="margin-right: 150px;" fullWidth nbInput required id="surname" >
+                            <br><br>
+          
+                            <label >Date of Birth:</label>  
+                            <br>
+                            <input type="date" placeholder="Date of Birth"  style="margin-right: 150px;" fullWidth nbInput required id=dob >
+                            <br><br>     
+                            <nb-footer>
+                                <button nbButton status="basic" type="submit" id="addchild ">Add Child</button>
+                                <button nbButton status="basic"  style="float: right;">Cancel</button><br><br>
+                            </nb-footer>
+          
+                            <table fullWidth>
+                    <thead style="text-align: center;">Children Added</thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Child Name</th>
+                      <th>Child Surname</th>
+                      <th>Date of Birth</th>
+                      
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>Chanel</td>
+                      <td>de Wet </td>
+                      <td>13/12/2001</td>
+                      
+          
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Hennie</td>
+                      <td>du Preez </td>
+                      <td>13/12/1960</td>
+                    </tr>
+                            </table>         
+                        </div>
+                        <div style="float: right">
+                            <button class="prev-button" nbButton nbStepperPrevious style="margin-right: 5px;">prev</button>
+                            <button class="next-button" nbButton nbStepperNext>next</button>
+                        </div>
+                    </nb-step>
+                </form> -->
+      
+                <nb-step label="Done">
+                    <ng-template><i class="paper-plane-outline"></i></ng-template>
+                    <!--<div>
+                        <p>If you have children, register your children here for Kids Church.</p>
+                        <br>
+                        <button class="btn btn-button" nbButton type="button" routerLink="/AddChild">Add Child</button>
+                    </div>-->
+                    <div style="text-align: center;">
+                        <h1>All done! <br> We received your information.</h1>
+                        <hr>
+                        <h3>Your request to register has been sent!</h3>
+                        <p>You will have access to the system when your request has been confirmed!
+                        </p>
+                  
+                    </div>
+                    <button class="next-button" type="submit" nbButton nbStepperNext style="float: right;" >Done</button>
+                </nb-step>
+           
+            </nb-stepper>       
+       
+        </nb-card-body>
+      </nb-card>
+      
+        
+      <label>*All information will be treated as confidential.</label>
+      
+      <!-- Content on page END -->
+        </nb-layout-column>
+    </form>
+</nb-layout-column>
+      </nb-layout>
+    
+      
+      <router-outlet></router-outlet>
+    
+    
+    

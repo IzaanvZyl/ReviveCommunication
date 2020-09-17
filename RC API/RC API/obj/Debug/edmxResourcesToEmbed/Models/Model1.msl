@@ -1,0 +1,636 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ReviveCommunicationsDBModelStoreContainer" CdmEntityContainer="ReviveCommunicationsDBEntities3">
+    <EntitySetMapping Name="Activation_Status">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Activation_Status">
+        <MappingFragment StoreEntitySet="Activation_Status">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Activation_Status1" ColumnName="Activation_Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Announcements">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Announcement">
+        <MappingFragment StoreEntitySet="Announcement">
+          <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+          <ScalarProperty Name="AnnouncementDate" ColumnName="AnnouncementDate" />
+          <ScalarProperty Name="AnnouncementSenderID" ColumnName="AnnouncementSenderID" />
+          <ScalarProperty Name="AnnouncementDetail" ColumnName="AnnouncementDetail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Audit_Trail">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Audit_Trail">
+        <MappingFragment StoreEntitySet="Audit_Trail">
+          <ScalarProperty Name="AuditTrailID" ColumnName="AuditTrailID" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="EventDescription" ColumnName="EventDescription" />
+          <ScalarProperty Name="EventDateTime" ColumnName="EventDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Children">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Child">
+        <MappingFragment StoreEntitySet="Child">
+          <ScalarProperty Name="ChildID" ColumnName="ChildID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Church_Attendance_Feedback">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Church_Attendance_Feedback">
+        <MappingFragment StoreEntitySet="Church_Attendance_Feedback">
+          <ScalarProperty Name="ChurchAttFeedbackID" ColumnName="ChurchAttFeedbackID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Member" ColumnName="Member" />
+          <ScalarProperty Name="Leader" ColumnName="Leader" />
+          <ScalarProperty Name="Visitors" ColumnName="Visitors" />
+          <ScalarProperty Name="FirstTimeVisitors" ColumnName="FirstTimeVisitors" />
+          <ScalarProperty Name="Salvations" ColumnName="Salvations" />
+          <ScalarProperty Name="ChurchAttGoalID" ColumnName="ChurchAttGoalID" />
+          <ScalarProperty Name="OrgIndivPosID" ColumnName="OrgIndivPosID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Church_Attendance_Goal">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Church_Attendance_Goal">
+        <MappingFragment StoreEntitySet="Church_Attendance_Goal">
+          <ScalarProperty Name="ChurchAttGoalID" ColumnName="ChurchAttGoalID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Overseer" ColumnName="Overseer" />
+          <ScalarProperty Name="Member" ColumnName="Member" />
+          <ScalarProperty Name="Leader" ColumnName="Leader" />
+          <ScalarProperty Name="Visitors" ColumnName="Visitors" />
+          <ScalarProperty Name="FirstTimeVisitors" ColumnName="FirstTimeVisitors" />
+          <ScalarProperty Name="Salvations" ColumnName="Salvations" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Church_Banking_Details">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Church_Banking_Details">
+        <MappingFragment StoreEntitySet="Church_Banking_Details">
+          <ScalarProperty Name="ChurchBankID" ColumnName="ChurchBankID" />
+          <ScalarProperty Name="ChurchName" ColumnName="ChurchName" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="Bank" ColumnName="Bank" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="Reference" ColumnName="Reference" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="ProvID" ColumnName="ProvID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Counsellings">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Counselling">
+        <MappingFragment StoreEntitySet="Counselling">
+          <ScalarProperty Name="CounsellingID" ColumnName="CounsellingID" />
+          <ScalarProperty Name="CounsellingRequestID" ColumnName="CounsellingRequestID" />
+          <ScalarProperty Name="CounsellingResponse" ColumnName="CounsellingResponse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Counselling_Request">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Counselling_Request">
+        <MappingFragment StoreEntitySet="Counselling_Request">
+          <ScalarProperty Name="CounsellingRequestID" ColumnName="CounsellingRequestID" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="CounsellingDescription" ColumnName="CounsellingDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Discipleships">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Discipleship">
+        <MappingFragment StoreEntitySet="Discipleship">
+          <ScalarProperty Name="DiscipleshipID" ColumnName="DiscipleshipID" />
+          <ScalarProperty Name="DiscipleshipDescription" ColumnName="DiscipleshipDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Discipleship_Feedback">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Discipleship_Feedback">
+        <MappingFragment StoreEntitySet="Discipleship_Feedback">
+          <ScalarProperty Name="DiscipleshipFeedbackID" ColumnName="DiscipleshipFeedbackID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DiscipleshipType" ColumnName="DiscipleshipType" />
+          <ScalarProperty Name="Attendance" ColumnName="Attendance" />
+          <ScalarProperty Name="DiscipleshipGoalID" ColumnName="DiscipleshipGoalID" />
+          <ScalarProperty Name="OrgIndivPosID" ColumnName="OrgIndivPosID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Discipleship_Goal">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Discipleship_Goal">
+        <MappingFragment StoreEntitySet="Discipleship_Goal">
+          <ScalarProperty Name="DiscipleshipGoalID" ColumnName="DiscipleshipGoalID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DiscipleshipType" ColumnName="DiscipleshipType" />
+          <ScalarProperty Name="Attendance" ColumnName="Attendance" />
+          <ScalarProperty Name="Overseer" ColumnName="Overseer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Goal_Access">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Goal_Access">
+        <MappingFragment StoreEntitySet="Goal_Access">
+          <ScalarProperty Name="GoalAccessID" ColumnName="GoalAccessID" />
+          <ScalarProperty Name="GoalName" ColumnName="GoalName" />
+          <ScalarProperty Name="GoalDescription" ColumnName="GoalDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Group_Type">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Group_Type">
+        <MappingFragment StoreEntitySet="Group_Type">
+          <ScalarProperty Name="GroupTypeID" ColumnName="GroupTypeID" />
+          <ScalarProperty Name="GroupTypeName" ColumnName="GroupTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Homecell_Attendance_Feedback">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Homecell_Attendance_Feedback">
+        <MappingFragment StoreEntitySet="Homecell_Attendance_Feedback">
+          <ScalarProperty Name="HomecellAttendanceFeedbackID" ColumnName="HomecellAttendanceFeedbackID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Members" ColumnName="Members" />
+          <ScalarProperty Name="Leaders" ColumnName="Leaders" />
+          <ScalarProperty Name="Visitors" ColumnName="Visitors" />
+          <ScalarProperty Name="FirstTimeVisitors" ColumnName="FirstTimeVisitors" />
+          <ScalarProperty Name="Salvations" ColumnName="Salvations" />
+          <ScalarProperty Name="HomecellAttendanceGoalID" ColumnName="HomecellAttendanceGoalID" />
+          <ScalarProperty Name="OrgIndivPosID" ColumnName="OrgIndivPosID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Homecell_Attendance_Goal">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Homecell_Attendance_Goal">
+        <MappingFragment StoreEntitySet="Homecell_Attendance_Goal">
+          <ScalarProperty Name="HomecellAttendanceGoalID" ColumnName="HomecellAttendanceGoalID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Overseer" ColumnName="Overseer" />
+          <ScalarProperty Name="Members" ColumnName="Members" />
+          <ScalarProperty Name="Leaders" ColumnName="Leaders" />
+          <ScalarProperty Name="Visitors" ColumnName="Visitors" />
+          <ScalarProperty Name="FirstTimeVisitors" ColumnName="FirstTimeVisitors" />
+          <ScalarProperty Name="Salvations" ColumnName="Salvations" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Homecell_Notes">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Homecell_Notes">
+        <MappingFragment StoreEntitySet="Homecell_Notes">
+          <ScalarProperty Name="HCNID" ColumnName="HCNID" />
+          <ScalarProperty Name="HomecellNotes" ColumnName="HomecellNotes" />
+          <ScalarProperty Name="UploadDate" ColumnName="UploadDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Invitations">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Invitation">
+        <MappingFragment StoreEntitySet="Invitation">
+          <ScalarProperty Name="InvitationID" ColumnName="InvitationID" />
+          <ScalarProperty Name="InvitationDate" ColumnName="InvitationDate" />
+          <ScalarProperty Name="InvitationDetail" ColumnName="InvitationDetail" />
+          <ScalarProperty Name="InvitationSenderPersonID" ColumnName="InvitationSenderPersonID" />
+          <ScalarProperty Name="Summary" ColumnName="Summary" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KidsChurches">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.KidsChurch">
+        <MappingFragment StoreEntitySet="KidsChurch">
+          <ScalarProperty Name="KidsChurchID" ColumnName="KidsChurchID" />
+          <ScalarProperty Name="KidsChurchName" ColumnName="KidsChurchName" />
+          <ScalarProperty Name="HeadOfChurch" ColumnName="HeadOfChurch" />
+          <ScalarProperty Name="QRcode" ColumnName="QRcode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Leader_Follow_Up">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Leader_Follow_Up">
+        <MappingFragment StoreEntitySet="Leader_Follow_Up">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="FollowUpStatus" ColumnName="FollowUpStatus" />
+          <ScalarProperty Name="ZonePastor" ColumnName="ZonePastor" />
+          <ScalarProperty Name="Overseer" ColumnName="Overseer" />
+          <ScalarProperty Name="Coordinatir" ColumnName="Coordinatir" />
+          <ScalarProperty Name="HomecellLeader" ColumnName="HomecellLeader" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="FollowUpDate" ColumnName="FollowUpDate" />
+          <ScalarProperty Name="NoAnswer" ColumnName="NoAnswer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Member_Follow_Up">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Member_Follow_Up">
+        <MappingFragment StoreEntitySet="Member_Follow_Up">
+          <ScalarProperty Name="MemberFollowUpID" ColumnName="MemberFollowUpID" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="FollowUpStatus" ColumnName="FollowUpStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Members_Serve_Follow_Up">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Members_Serve_Follow_Up">
+        <MappingFragment StoreEntitySet="Members_Serve_Follow_Up">
+          <ScalarProperty Name="ServeRequestID" ColumnName="ServeRequestID" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="FollowUpDate" ColumnName="FollowUpDate" />
+          <ScalarProperty Name="ZonePastor" ColumnName="ZonePastor" />
+          <ScalarProperty Name="Homecell" ColumnName="Homecell" />
+          <ScalarProperty Name="SpiritualGiftTestSession" ColumnName="SpiritualGiftTestSession" />
+          <ScalarProperty Name="HighestSpiritualGifts" ColumnName="HighestSpiritualGifts" />
+          <ScalarProperty Name="Group1" ColumnName="Group1" />
+          <ScalarProperty Name="Group2" ColumnName="Group2" />
+          <ScalarProperty Name="Group3" ColumnName="Group3" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="FollowUpStatus" ColumnName="FollowUpStatus" />
+          <ScalarProperty Name="NoAnswer" ColumnName="NoAnswer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NMO_Feedback">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.NMO_Feedback">
+        <MappingFragment StoreEntitySet="NMO_Feedback">
+          <ScalarProperty Name="NMOFeedbackID" ColumnName="NMOFeedbackID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="MonthTotal" ColumnName="MonthTotal" />
+          <ScalarProperty Name="NMOGoalID" ColumnName="NMOGoalID" />
+          <ScalarProperty Name="OrgIndivPosID" ColumnName="OrgIndivPosID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NMO_Follow_Up">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.NMO_Follow_Up">
+        <MappingFragment StoreEntitySet="NMO_Follow_Up">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="FollowUpStatus" ColumnName="FollowUpStatus" />
+          <ScalarProperty Name="NoAnswer" ColumnName="NoAnswer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NMO_Goal">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.NMO_Goal">
+        <MappingFragment StoreEntitySet="NMO_Goal">
+          <ScalarProperty Name="NMOGoalID" ColumnName="NMOGoalID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="MonthTotal" ColumnName="MonthTotal" />
+          <ScalarProperty Name="Overseer" ColumnName="Overseer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Organisational_Group">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Organisational_Group">
+        <MappingFragment StoreEntitySet="Organisational_Group">
+          <ScalarProperty Name="OrgGroupID" ColumnName="OrgGroupID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="GroupTypeID" ColumnName="GroupTypeID" />
+          <ScalarProperty Name="SuburbID" ColumnName="SuburbID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Organisational_Individual_Position">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Organisational_Individual_Position">
+        <MappingFragment StoreEntitySet="Organisational_Individual_Position">
+          <ScalarProperty Name="OrgIndivPosID" ColumnName="OrgIndivPosID" />
+          <ScalarProperty Name="Decription" ColumnName="Decription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Organisational_Structure_Position">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Organisational_Structure_Position">
+        <MappingFragment StoreEntitySet="Organisational_Structure_Position">
+          <ScalarProperty Name="OrgStructID" ColumnName="OrgStructID" />
+          <ScalarProperty Name="OrgStructLevel" ColumnName="OrgStructLevel" />
+          <ScalarProperty Name="AssignLeader" ColumnName="AssignLeader" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="OrgStructTypeID" ColumnName="OrgStructTypeID" />
+          <ScalarProperty Name="OrgIndivPosID" ColumnName="OrgIndivPosID" />
+          <ScalarProperty Name="OrgStructIDReportsTo" ColumnName="OrgStructIDReportsTo" />
+          <ScalarProperty Name="OrgGroupID" ColumnName="OrgGroupID" />
+          <ScalarProperty Name="OrgGroupID1" ColumnName="OrgGroupID1" />
+          <ScalarProperty Name="OrgGroupID2" ColumnName="OrgGroupID2" />
+          <ScalarProperty Name="OrgGroupID3" ColumnName="OrgGroupID3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Organisational_Structure_Type">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Organisational_Structure_Type">
+        <MappingFragment StoreEntitySet="Organisational_Structure_Type">
+          <ScalarProperty Name="OrgStructTypeID" ColumnName="OrgStructTypeID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Overseer_Follow_Up">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Overseer_Follow_Up">
+        <MappingFragment StoreEntitySet="Overseer_Follow_Up">
+          <ScalarProperty Name="OverseerFollowUpID" ColumnName="OverseerFollowUpID" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="FollowUpStatus" ColumnName="FollowUpStatus" />
+          <ScalarProperty Name="Structure" ColumnName="Structure" />
+          <ScalarProperty Name="ZonePastor" ColumnName="ZonePastor" />
+          <ScalarProperty Name="Overseer" ColumnName="Overseer" />
+          <ScalarProperty Name="FollowUpDate" ColumnName="FollowUpDate" />
+          <ScalarProperty Name="NoAnswer" ColumnName="NoAnswer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="People">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Person">
+        <MappingFragment StoreEntitySet="Person">
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="OTP" ColumnName="OTP" />
+          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+          <ScalarProperty Name="Activation_Status_ID" ColumnName="Activation_Status_ID" />
+          <ScalarProperty Name="Suburb" ColumnName="Suburb" />
+          <ScalarProperty Name="City" ColumnName="City" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Person_Announcement">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Person_Announcement">
+        <MappingFragment StoreEntitySet="Person_Announcement">
+          <ScalarProperty Name="AnnouncementID" ColumnName="AnnouncementID" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="AnnouncementStatus" ColumnName="AnnouncementStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Person_Children">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Person_Children">
+        <MappingFragment StoreEntitySet="Person_Children">
+          <ScalarProperty Name="KidsChurchID" ColumnName="KidsChurchID" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="ChildID" ColumnName="ChildID" />
+          <ScalarProperty Name="KCVolunteerConfirmation" ColumnName="KCVolunteerConfirmation" />
+          <ScalarProperty Name="CheckIn" ColumnName="CheckIn" />
+          <ScalarProperty Name="CheckInDateTime" ColumnName="CheckInDateTime" />
+          <ScalarProperty Name="SignOut" ColumnName="SignOut" />
+          <ScalarProperty Name="SignOutDateTime" ColumnName="SignOutDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Person_Discipleship">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Person_Discipleship">
+        <MappingFragment StoreEntitySet="Person_Discipleship">
+          <ScalarProperty Name="DiscipleshipID" ColumnName="DiscipleshipID" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="FollowUpDate" ColumnName="FollowUpDate" />
+          <ScalarProperty Name="FollowedUp" ColumnName="FollowedUp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Person_Invitation">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Person_Invitation">
+        <MappingFragment StoreEntitySet="Person_Invitation">
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="InvitationID" ColumnName="InvitationID" />
+          <ScalarProperty Name="InvitationStatus" ColumnName="InvitationStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Provinces">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Province">
+        <MappingFragment StoreEntitySet="Province">
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+          <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Salvations">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Salvation">
+        <MappingFragment StoreEntitySet="Salvation">
+          <ScalarProperty Name="SalID" ColumnName="SalID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="AlterWorker" ColumnName="AlterWorker" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="EmploymentStatus" ColumnName="EmploymentStatus" />
+          <ScalarProperty Name="MaritualStatus" ColumnName="MaritualStatus" />
+          <ScalarProperty Name="ResidentialAddress" ColumnName="ResidentialAddress" />
+          <ScalarProperty Name="Suburb" ColumnName="Suburb" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="HomeTelNo" ColumnName="HomeTelNo" />
+          <ScalarProperty Name="WorkTelNo" ColumnName="WorkTelNo" />
+          <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Invited" ColumnName="Invited" />
+          <ScalarProperty Name="NameSurnameInvite" ColumnName="NameSurnameInvite" />
+          <ScalarProperty Name="HomecellLeader" ColumnName="HomecellLeader" />
+          <ScalarProperty Name="ZonePastor" ColumnName="ZonePastor" />
+          <ScalarProperty Name="StudyAddress" ColumnName="StudyAddress" />
+          <ScalarProperty Name="SchoolLevel" ColumnName="SchoolLevel" />
+          <ScalarProperty Name="NameofSchool" ColumnName="NameofSchool" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="StudyYear" ColumnName="StudyYear" />
+          <ScalarProperty Name="Institution" ColumnName="Institution" />
+          <ScalarProperty Name="ParentGuardianCell" ColumnName="ParentGuardianCell" />
+          <ScalarProperty Name="PrayerRequest" ColumnName="PrayerRequest" />
+          <ScalarProperty Name="NoAnswer" ColumnName="NoAnswer" />
+          <ScalarProperty Name="FollowedUp" ColumnName="FollowedUp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sentiment_Analysis">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Sentiment_Analysis">
+        <MappingFragment StoreEntitySet="Sentiment_Analysis">
+          <ScalarProperty Name="WordID" ColumnName="WordID" />
+          <ScalarProperty Name="CriticalWord" ColumnName="CriticalWord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Structure_Growth_Feedback">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Structure_Growth_Feedback">
+        <MappingFragment StoreEntitySet="Structure_Growth_Feedback">
+          <ScalarProperty Name="StructureGrowthFeedbackID" ColumnName="StructureGrowthFeedbackID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="StructureName" ColumnName="StructureName" />
+          <ScalarProperty Name="Members" ColumnName="Members" />
+          <ScalarProperty Name="OrgIndivPosID" ColumnName="OrgIndivPosID" />
+          <ScalarProperty Name="StructureGrowthGoalID" ColumnName="StructureGrowthGoalID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Structure_Growth_Goal">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Structure_Growth_Goal">
+        <MappingFragment StoreEntitySet="Structure_Growth_Goal">
+          <ScalarProperty Name="StructureGrowthGoalID" ColumnName="StructureGrowthGoalID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Members" ColumnName="Members" />
+          <ScalarProperty Name="Overseer" ColumnName="Overseer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suburbs">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Suburb">
+        <MappingFragment StoreEntitySet="Suburb">
+          <ScalarProperty Name="SuburbID" ColumnName="SuburbID" />
+          <ScalarProperty Name="SuburbName" ColumnName="SuburbName" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Use_Cases">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Use_Cases">
+        <MappingFragment StoreEntitySet="Use_Cases">
+          <ScalarProperty Name="UCID" ColumnName="UCID" />
+          <ScalarProperty Name="UCName" ColumnName="UCName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zone_Church_Attendance_Feedback">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Zone_Church_Attendance_Feedback">
+        <MappingFragment StoreEntitySet="Zone_Church_Attendance_Feedback">
+          <ScalarProperty Name="ZoneChurchAttFeedbackID" ColumnName="ZoneChurchAttFeedbackID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Member" ColumnName="Member" />
+          <ScalarProperty Name="Leader" ColumnName="Leader" />
+          <ScalarProperty Name="Visitors" ColumnName="Visitors" />
+          <ScalarProperty Name="FirstTimeVisitors" ColumnName="FirstTimeVisitors" />
+          <ScalarProperty Name="Salvations" ColumnName="Salvations" />
+          <ScalarProperty Name="ZoneChurchAttGoalID" ColumnName="ZoneChurchAttGoalID" />
+          <ScalarProperty Name="OrgIndivPosID" ColumnName="OrgIndivPosID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zone_Church_Attendance_Goal">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Zone_Church_Attendance_Goal">
+        <MappingFragment StoreEntitySet="Zone_Church_Attendance_Goal">
+          <ScalarProperty Name="ZoneChurchAttGoalID" ColumnName="ZoneChurchAttGoalID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Overseer" ColumnName="Overseer" />
+          <ScalarProperty Name="Member" ColumnName="Member" />
+          <ScalarProperty Name="Leader" ColumnName="Leader" />
+          <ScalarProperty Name="Visitors" ColumnName="Visitors" />
+          <ScalarProperty Name="FirstTimeVisitors" ColumnName="FirstTimeVisitors" />
+          <ScalarProperty Name="Salvations" ColumnName="Salvations" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zone_Growth_Feedback">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Zone_Growth_Feedback">
+        <MappingFragment StoreEntitySet="Zone_Growth_Feedback">
+          <ScalarProperty Name="ZonegrowthFeedbackID" ColumnName="ZonegrowthFeedbackID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Members" ColumnName="Members" />
+          <ScalarProperty Name="ZonegrowthGoalID" ColumnName="ZonegrowthGoalID" />
+          <ScalarProperty Name="OrgIndivPosID" ColumnName="OrgIndivPosID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zone_Growth_Goal">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Zone_Growth_Goal">
+        <MappingFragment StoreEntitySet="Zone_Growth_Goal">
+          <ScalarProperty Name="ZonegrowthGoalID" ColumnName="ZonegrowthGoalID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Members" ColumnName="Members" />
+          <ScalarProperty Name="Overseer" ColumnName="Overseer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zone_Homecell_Attendance_Feedback">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Zone_Homecell_Attendance_Feedback">
+        <MappingFragment StoreEntitySet="Zone_Homecell_Attendance_Feedback">
+          <ScalarProperty Name="ZoneHomecellAttFeedbackID" ColumnName="ZoneHomecellAttFeedbackID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Member" ColumnName="Member" />
+          <ScalarProperty Name="Leader" ColumnName="Leader" />
+          <ScalarProperty Name="Visitors" ColumnName="Visitors" />
+          <ScalarProperty Name="FirstTimeVisitors" ColumnName="FirstTimeVisitors" />
+          <ScalarProperty Name="Salvations" ColumnName="Salvations" />
+          <ScalarProperty Name="ZoneHomecellAttGoalID" ColumnName="ZoneHomecellAttGoalID" />
+          <ScalarProperty Name="OrgIndivPosID" ColumnName="OrgIndivPosID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zone_Homecell_Attendance_Goal">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.Zone_Homecell_Attendance_Goal">
+        <MappingFragment StoreEntitySet="Zone_Homecell_Attendance_Goal">
+          <ScalarProperty Name="ZoneHomecellAttGoalID" ColumnName="ZoneHomecellAttGoalID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Overseer" ColumnName="Overseer" />
+          <ScalarProperty Name="Members" ColumnName="Members" />
+          <ScalarProperty Name="Leaders" ColumnName="Leaders" />
+          <ScalarProperty Name="Visitors" ColumnName="Visitors" />
+          <ScalarProperty Name="FirstTimeVisitors" ColumnName="FirstTimeVisitors" />
+          <ScalarProperty Name="Salvations" ColumnName="Salvations" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OutstandingDiscipleships">
+      <EntityTypeMapping TypeName="ReviveCommunicationsDBModel.OutstandingDiscipleship">
+        <MappingFragment StoreEntitySet="OutstandingDiscipleships">
+          <ScalarProperty Name="personid" ColumnName="personid" />
+          <ScalarProperty Name="discipleshipid" ColumnName="discipleshipid" />
+          <ScalarProperty Name="discipleshipdescription" ColumnName="discipleshipdescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Indiv_Pos_Goal_Access" TypeName="ReviveCommunicationsDBModel.Indiv_Pos_Goal_Access" StoreEntitySet="Indiv_Pos_Goal_Access">
+      <EndProperty Name="Goal_Access">
+        <ScalarProperty Name="GoalAccessID" ColumnName="GoalAccessID" />
+      </EndProperty>
+      <EndProperty Name="Organisational_Individual_Position">
+        <ScalarProperty Name="OrgIndivPosID" ColumnName="OrgIndivPosID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Org_Level_Use_Case" TypeName="ReviveCommunicationsDBModel.Org_Level_Use_Case" StoreEntitySet="Org_Level_Use_Case">
+      <EndProperty Name="Use_Cases">
+        <ScalarProperty Name="UCID" ColumnName="UCID" />
+      </EndProperty>
+      <EndProperty Name="Organisational_Individual_Position">
+        <ScalarProperty Name="OrgIndivPosID" ColumnName="OrgIndivPosID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

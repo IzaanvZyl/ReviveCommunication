@@ -1,0 +1,79 @@
+<nb-layout>
+    
+    <!-- nav bar start -->
+    <nb-layout-header fixed>
+        <a href="#" (click)="toggle()"><i class="nb-menu"><nb-icon icon="menu-outline" [options]="{ animation: { type: 'pulse' } }"></nb-icon></i></a>
+        <div class="header-container">
+        <nb-actions size="medium"  >
+           <nb-action icon="email-outline"
+                     
+                     title="Invitations"
+                     link="/ViewInvitation"
+                     >
+          </nb-action>
+          <nb-action icon="message-circle-outline"
+                     title="Announcements"
+                     link="/ViewAnnouncement">
+          </nb-action>
+          <nb-action id="user">
+            <nb-user name="{{Person.Name}} {{Person.Surname}}" ></nb-user>
+          </nb-action>
+          <nb-action>
+              <button type="button" nbButton class="btn btn-info" (click)="Logout()">Logout</button>
+          </nb-action>
+         </nb-actions>
+        </div>
+  
+  
+      </nb-layout-header>
+  
+      <nb-sidebar state="compacted">
+              <nb-menu [items]="items"></nb-menu>
+      </nb-sidebar>
+  
+      <!-- nav bar end -->
+    <nb-layout-column class="colored-column-basic">
+        <nb-card [nbSpinner]="loading" nbSpinnerStatus="success">
+            <nb-card-header>
+                <b>KidsChurch</b>
+                
+            </nb-card-header><br><br>
+        <nb-card-body>
+            <!-- <nb-form-field>
+                <input type="text" nbInput placeholder="Search">
+                <button nbButton (click)="showErrorToast('top-right', 'danger')"><nb-icon nbPrefix icon="search-outline" pack="eva"></nb-icon></button>
+            </nb-form-field><br><br> -->
+            <button nbButton style="margin-right: 10px; background-color: transparent; border: none; color:white" routerLink="/AddChild"><nb-icon icon="person-add-outline"></nb-icon>Add Child</button>
+            <button nbButton style="margin-right: 10px; background-color: transparent; border: none; color:white" routerLink="/Check-in"><nb-icon icon="person-add-outline"></nb-icon>Check-in Child</button>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Kids Church Class</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr *ngFor="let child of children">
+                    <td>{{child.Name}}</td>
+                    <td>{{child.Surname}}</td>
+                    <td *ngFor="let child of child.PersonChildren">
+                        {{child.KidsChurchName}}
+                    </td>
+                    <td>
+                        <button nbButton style="background-color: transparent; border: none; color:white" routerLink="/UpdateChild" (click)="setData(child)"><nb-icon icon="edit-outline"></nb-icon>Update</button>
+                    </td>
+                    <td>
+                        <button nbButton style="margin-right: 10px; background-color: transparent; border: none; color:white" (click)="onRemove(child)"><nb-icon icon="trash-2-outline"></nb-icon>Delete</button>
+                    </td>
+                    <td>
+                        <button nbButton style="margin-right: 10px; background-color: transparent; border: none; color:white" routerLink="/SignOutChild" (click)="toggleLoadingAnimation()"><nb-icon icon="person-done-outline"></nb-icon>Sign-out Child</button>
+                    </td>
+
+                </tr>
+            </table>
+        </nb-card-body>
+        </nb-card>
+    </nb-layout-column>
+</nb-layout>
+

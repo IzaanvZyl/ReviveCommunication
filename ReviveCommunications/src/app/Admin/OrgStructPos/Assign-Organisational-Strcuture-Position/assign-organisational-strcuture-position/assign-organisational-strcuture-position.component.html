@@ -1,0 +1,69 @@
+<nb-layout>
+  
+    <!-- nav bar start -->
+    <nb-layout-header fixed>
+      <a href="#" (click)="toggle()"><i class="nb-menu"><nb-icon icon="menu-outline" [options]="{ animation: { type: 'pulse' } }"></nb-icon></i></a>
+      <div class="header-container">
+      <nb-actions size="medium"  >
+         <nb-action icon="email-outline"
+                   
+                   title="Invitations"
+                   link="/ViewInvitation"
+                   >
+        </nb-action>
+        <nb-action icon="message-circle-outline"
+                   title="Announcements"
+                   link="/ViewAnnouncement">
+        </nb-action>
+        <nb-action id="user">
+          <nb-user name="{{Person.Name}} {{Person.Surname}}" ></nb-user>
+        </nb-action>
+        <nb-action>
+            <button type="button" nbButton class="btn btn-info" (click)="Logout()">Logout</button>
+        </nb-action>
+       </nb-actions>
+      </div>
+
+
+    </nb-layout-header>
+
+    <nb-sidebar state="compacted">
+            <nb-menu [items]="items"></nb-menu>
+    </nb-sidebar>
+
+    <!-- nav bar end -->
+    <nb-layout-column class="colored-column-basic">
+
+<nb-card>
+  <nb-card-header>
+    <div style="float: left;"> <h3>Organisational structure position</h3></div><div>  <button class="next-button" nbButton style="background-color: transparent; border:none;float: right; color: white; margin-right: 45px;" routerLink="/AddOrganisationalStructurePosition"><nb-icon icon="plus-outline"></nb-icon> Create</button></div>
+  </nb-card-header>
+<nb-card-body>
+<form [formGroup]="search" (ngSubmit)="MemberSearch(search.value)">
+<label style="margin-right: 200px;">Member</label><input type="text" nbInput shape="rectangle" formControlName="Name"><button class="next-button" type="submit" nbButton style="background-color: transparent; border:none; color: white; margin-right: 5px;" ><nb-icon icon="search-outline"></nb-icon></button><br><br>
+</form>
+  <form [formGroup]="OrgStructPos1" (ngSubmit)="MemberGet(OrgStructPos1.value)">
+  <input formControlName="PersonID" hidden ><br>
+  <label style="margin-right: 50px;">Organisational Structure Position</label><nb-select placeholder="Select Position" formControlName="OrgStructID">
+    <nb-option *ngFor="let leaderpos of structpos" [value]="leaderpos.OrgStructID"> {{leaderpos.Name}} - {{leaderpos.Description}}</nb-option>
+  
+  </nb-select><br><br>
+  <label style="margin-right: 205px;">Homecell</label><nb-select placeholder="Select Homecell" formControlName="OrgGroupID">
+    <nb-option *ngFor="let grouptype of groups" [value]="grouptype.GroupTypeID">{{grouptype.Description}}</nb-option>
+  </nb-select><br><br>
+  <label style="margin-right: 125px;">Organisational Group</label><nb-select placeholder="Select group" formControlName="OrgGroupID1">
+    <nb-option *ngFor="let grouptype of groups" [value]="grouptype.GroupTypeID">{{grouptype.Description}}</nb-option>
+  </nb-select><br><br>
+  <label style="margin-right: 125px; color: transparent;">Organisational Group</label><nb-select placeholder="Select group" formControlName="OrgGroupID">
+    <nb-option *ngFor="let grouptype of groups" [value]="grouptype.GroupTypeID">{{grouptype.Description}}</nb-option>
+  </nb-select><br><br>
+  <label style="margin-right: 125px; color: transparent;">Organisational Group</label><nb-select placeholder="Select group">
+    <nb-option *ngFor="let grouptype of groups" [value]="grouptype.GroupTypeID">{{grouptype.Description}}</nb-option>
+  </nb-select><br><br>
+<div style="margin-left: 300px;">
+  <button class="next-button" nbButton type="button" style="margin-right: 5px;" >Back</button><button class="next-button" nbButton type="submit">Assign</button>
+</div><br>
+  </form>
+</nb-card-body>
+</nb-card></nb-layout-column>
+</nb-layout>

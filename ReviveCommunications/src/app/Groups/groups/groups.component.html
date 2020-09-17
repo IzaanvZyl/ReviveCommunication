@@ -1,0 +1,90 @@
+ 
+<nb-layout>
+ 
+    <!-- nav bar start -->
+    <nb-layout-header fixed>
+        <a href="#" (click)="toggle()"><i class="nb-menu"><nb-icon icon="menu-outline" [options]="{ animation: { type: 'pulse' } }"></nb-icon></i></a>
+        <div class="header-container">
+        <nb-actions size="medium"  >
+           <nb-action icon="email-outline"
+                     
+                     title="Invitations"
+                     link="/ViewInvitation"
+                     >
+          </nb-action>
+          <nb-action icon="message-circle-outline"
+                     title="Announcements"
+                     link="/ViewAnnouncement">
+          </nb-action>
+          <nb-action id="user">
+            <nb-user name="{{Person.Name}} {{Person.Surname}}" ></nb-user>
+          </nb-action>
+          <nb-action>
+              <button type="button" nbButton class="btn btn-info" (click)="Logout()">Logout</button>
+          </nb-action>
+         </nb-actions>
+        </div>
+  
+  
+      </nb-layout-header>
+  
+      <nb-sidebar state="compacted">
+              <nb-menu [items]="items"></nb-menu>
+      </nb-sidebar>
+  
+      <!-- nav bar end -->
+  
+
+    <nb-layout-column class="colored-column-basic">
+        <nb-card>
+        <nb-card-header>
+            <b>Groups</b>            
+            <button nbButton style="float:right; background-color: transparent; border: none; color:white" routerLink="/GroupTransfer"><nb-icon icon="swap-outline"></nb-icon>Transfer Groups</button>
+            <button nbButton style="float:right; background-color: transparent; border: none; color:white" routerLink="/JoinGroup"><nb-icon icon="home-outline" ></nb-icon>Serve</button>
+            
+            
+            <!--
+            <button nbButton style="float: right; margin-left: 15px;" routerLink="/addGroup">
+                <nb-icon icon="person-add-outline" ></nb-icon>Add Group
+            </button>
+            <button nbButton style="float:right; background-color: transparent; border: none; color:white" routerLink="/maintainGroup"><nb-icon icon="edit-outline"></nb-icon>Update</button>
+            -->
+        </nb-card-header>
+        <nb-card-body>
+            <!-- <nb-form-field>
+                <input type="text" nbInput placeholder="Search">
+                <button nbButton (click)="showErrorToast('top-right', 'danger')"><nb-icon nbPrefix icon="search-outline" pack="eva"></nb-icon></button>
+            </nb-form-field><br><br><br> -->
+
+            <button nbButton style="background-color: transparent; border: none; color:white" routerLink="/AddGroup"><nb-icon icon="plus-outline"></nb-icon>Add Group</button>
+            
+            <br>
+            <table>
+                <tr>
+                    <th>Group Name</th>
+                    <th>View Group</th>
+                    <th>Update</th>
+                </tr>
+
+                <tr *ngFor="let group of groups">
+                    <td>{{group.Description}}</td>
+                    <td>
+                        <button nbButton style="text-align: center;" (click)="open()" (click)="setData(group)" fullWidth>View</button>
+                    </td>
+                    <td>
+                        <button nbButton style="background-color: transparent; border: none; color:white" routerLink="/MaintainGroup" (click)="setData(group)"><nb-icon icon="edit-outline"></nb-icon>Update</button>
+                    </td>
+                </tr>
+            </table>
+        </nb-card-body>
+        </nb-card>
+    </nb-layout-column>
+
+    
+<nb-layout-footer fixed>
+    <img src="https://church.crc.org.za/assets/img/brand/black-with-text.png" style=" height: 30px;">
+    </nb-layout-footer>
+</nb-layout>
+
+
+

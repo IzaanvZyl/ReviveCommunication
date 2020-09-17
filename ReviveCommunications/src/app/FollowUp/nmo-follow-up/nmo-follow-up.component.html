@@ -1,0 +1,95 @@
+<nb-layout>
+
+    <!-- nav bar start -->
+    <nb-layout-header fixed>
+      <a href="#" (click)="toggle()"><i class="nb-menu"><nb-icon icon="menu-outline" [options]="{ animation: { type: 'pulse' } }"></nb-icon></i></a>
+      <div class="header-container">
+      <nb-actions size="medium"  >
+         <nb-action icon="email-outline"
+                   
+                   title="Invitations"
+                   link="/ViewInvitation"
+                   >
+        </nb-action>
+        <nb-action icon="message-circle-outline"
+                   title="Announcements"
+                   link="/ViewAnnouncement">
+        </nb-action>
+        <nb-action id="user">
+          <nb-user name="{{Person.Name}} {{Person.Surname}}" ></nb-user>
+        </nb-action>
+        <nb-action>
+            <button type="button" nbButton class="btn btn-info" (click)="Logout()">Logout</button>
+        </nb-action>
+       </nb-actions>
+      </div>
+
+
+    </nb-layout-header>
+
+    <nb-sidebar state="compacted">
+            <nb-menu [items]="items"></nb-menu>
+    </nb-sidebar>
+
+    <!-- nav bar end -->
+  <nb-layout-column class="colored-column-basic">
+    <nb-card>
+      <nb-card-header>Follow-Up on New Members Orientation</nb-card-header>
+      <nb-card-body>
+        <table style="border: white;">
+          <tbody>
+            <tr>
+              <td style="width: 450px;">
+                <img src="assets/PieData.png">
+              </td>
+              <td>
+                <label style="margin-left: 150px;">Total Number of Follow-ups: 120</label><br><br>
+                <label style="margin-left: 150px;">Completed Number of Follow-ups: 96</label><br><br>
+                <label style="margin-left: 150px;">Number of follow-ups remaining: 24</label><br><br>
+                <p style="margin-left: 150px;"><nb-progress-bar [value]="80" status="success" style="width: 300px;" [displayValue]="true"> - Completed</nb-progress-bar></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </nb-card-body>
+    </nb-card>
+    <nb-card>
+     
+      <nb-card-body>
+        <table>
+          <tr>
+            <th>Completion</th>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Cellphone</th>
+            <th>Email</th>
+          </tr>
+          <tr>
+            <td>
+                <nb-accordion>
+                 <nb-accordion-item>
+                <nb-accordion-item-header>Follow-up</nb-accordion-item-header>
+                <nb-accordion-item-body>
+                    <td style="text-align: center;"><button nbButton size="small" (click)="showToast('top-right', 'success')">Completed<nb-icon icon="checkmark-outline"></nb-icon></button></td>
+                </nb-accordion-item-body>
+                <nb-accordion-item-body>
+                    <td style="text-align: center;"><button nbButton size="small" (click)="showErrorToast('top-right', 'danger')">No Answer<nb-icon icon="close-outline"></nb-icon></button></td>
+                </nb-accordion-item-body>
+               </nb-accordion-item>
+              </nb-accordion>
+            </td>
+            <td>2020-05-10</td>
+            <td>Nico</td>
+            <td>Swartz</td>
+            <td>082 611 1458</td>
+            <td>nicoswartz@gmail.com</td>
+          </tr>
+        </table>
+  
+      </nb-card-body>
+  
+    </nb-card>
+  </nb-layout-column>
+  </nb-layout>
+

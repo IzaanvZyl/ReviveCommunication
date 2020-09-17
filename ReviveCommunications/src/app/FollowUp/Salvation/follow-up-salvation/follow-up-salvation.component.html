@@ -1,0 +1,91 @@
+<nb-layout>
+  
+    <!-- nav bar start -->
+    <nb-layout-header fixed>
+      <a href="#" (click)="toggle()"><i class="nb-menu"><nb-icon icon="menu-outline" [options]="{ animation: { type: 'pulse' } }"></nb-icon></i></a>
+      <div class="header-container">
+      <nb-actions size="medium"  >
+         <nb-action icon="email-outline"
+                   
+                   title="Invitations"
+                   link="/ViewInvitation"
+                   >
+        </nb-action>
+        <nb-action icon="message-circle-outline"
+                   title="Announcements"
+                   link="/ViewAnnouncement">
+        </nb-action>
+        <nb-action id="user">
+          <nb-user name="{{Person.Name}} {{Person.Surname}}" ></nb-user>
+        </nb-action>
+        <nb-action>
+            <button type="button" nbButton class="btn btn-info" (click)="Logout()">Logout</button>
+        </nb-action>
+       </nb-actions>
+      </div>
+
+
+    </nb-layout-header>
+
+    <nb-sidebar state="compacted">
+            <nb-menu [items]="items"></nb-menu>
+    </nb-sidebar>
+
+    <!-- nav bar end -->
+    <nb-layout-column class="colored-column-basic">
+
+<nb-card>
+  <nb-card-header>Follow-Up on Salvations</nb-card-header>
+  <nb-card-body>
+    <div style="margin: auto">
+            <label style="margin-left: 200px;">Completed Number of Follow-ups: {{SalvationsProgress.Completed}}</label><br><br>
+            <label style="margin-left: 200px;">Number of follow-ups remaining: {{SalvationsProgress.Remaining}}</label><br><br>
+            <p style="margin-left: 200px;">  <nb-progress-bar [value]="SalvationsProgress.ProgressPercentage" status="success">{{SalvationsProgress.ProgressPercentage}} % - Completed</nb-progress-bar></p>
+          </div>
+</nb-card-body>
+</nb-card>
+<nb-card>
+  <nb-card-body>
+    <table>
+      <tr>
+        <th>Completion</th>
+        <th>Date</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Age</th>
+        <th>Residential Address</th>
+        <th>Home Number</th>
+        <th>Work Number</th>
+        <th>Cellphone</th>
+        <th>Email</th>
+      </tr>
+      <tbody *ngFor="let salvationFollowUp of Salvations">
+      <tr>
+        <td>
+            <nb-accordion>
+             <nb-accordion-item>
+            <nb-accordion-item-header>Follow-up</nb-accordion-item-header>
+            <nb-accordion-item-body>
+                <td style="text-align: center;"><button nbButton size="small" (click)="FollowedUp(salvationFollowUp)">Completed<nb-icon icon="checkmark-outline"></nb-icon></button></td>
+            </nb-accordion-item-body>
+            <nb-accordion-item-body>
+                <td style="text-align: center;"><button nbButton size="small" (click)="NoAnswer(salvationFollowUp)">No Answer<nb-icon icon="close-outline"></nb-icon></button></td>
+            </nb-accordion-item-body>
+           </nb-accordion-item>
+          </nb-accordion>
+        </td>
+        <td>{{salvationFollowUp.Date}}</td>
+        <td>{{salvationFollowUp.Name}}</td>
+        <td>{{salvationFollowUp.Surname}}</td>
+        <td>{{salvationFollowUp.Age}}</td>
+        <td>{{salvationFollowUp.ResidentialAddress}}</td>
+        <td>{{salvationFollowUp.HomeTelNo}}</td>
+        <td>{{salvationFollowUp.WorkTelNo}}</td>
+        <td>{{salvationFollowUp.Cellphone}}</td>
+        <td>{{salvationFollowUp.Email}}</td>
+      </tr>
+    </tbody>
+    </table>
+  </nb-card-body>
+</nb-card></nb-layout-column>
+</nb-layout>

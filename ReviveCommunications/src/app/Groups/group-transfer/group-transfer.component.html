@@ -1,0 +1,65 @@
+<nb-layout>
+
+    
+    <!-- nav bar start -->
+    <nb-layout-header fixed>
+        <a href="#" (click)="toggle()"><i class="nb-menu"><nb-icon icon="menu-outline" [options]="{ animation: { type: 'pulse' } }"></nb-icon></i></a>
+        <div class="header-container">
+        <nb-actions size="medium"  >
+           <nb-action icon="email-outline"
+                     
+                     title="Invitations"
+                     link="/ViewInvitation"
+                     >
+          </nb-action>
+          <nb-action icon="message-circle-outline"
+                     title="Announcements"
+                     link="/ViewAnnouncement">
+          </nb-action>
+          <nb-action id="user">
+            <nb-user name="{{Person.Name}} {{Person.Surname}}" ></nb-user>
+          </nb-action>
+          <nb-action>
+              <button type="button" nbButton class="btn btn-info" (click)="Logout()">Logout</button>
+          </nb-action>
+         </nb-actions>
+        </div>
+  
+  
+      </nb-layout-header>
+  
+      <nb-sidebar state="compacted">
+              <nb-menu [items]="items"></nb-menu>
+      </nb-sidebar>
+  
+      <!-- nav bar end -->
+    <nb-layout-column class="colored-column-basic">
+        <form [formGroup]="transfergroup" (ngSubmit)="onSubmit(transfergroup.value)">
+        <nb-card>
+        
+                <nb-card-header>Transfer Groups</nb-card-header><br><br>
+
+                <nb-card-body>
+                    <label>Which Group whould you like to transfer from:</label>
+                    <nb-select placeholder="Select a Ministry" formControlName="OrgGroupID">
+                        <nb-option *ngFor="let group of groups" [value]="group.OrgGroupID">{{group.Description}}</nb-option>
+                    </nb-select><br><br><br>
+
+                    <label style="margin-right: 25px;">Which Group whould you like to transfer to:</label>
+                    <nb-select  formControlName="GroupTypeID" placeholder="Select a Ministry" required>
+                        <nb-option *ngFor="let grouptype of groups" [value]="grouptype.GroupTypeID">{{grouptype.Description}}</nb-option>
+                    </nb-select>
+
+                    <br><br>
+
+                    <button nbButton status="basic" style="margin-right: 20px;" (click)="showToast('top-right', 'success')">Transfer</button>
+                    <button nbButton status="basic" routerLink="/Groups">Cancel</button>
+                </nb-card-body>
+        
+        </nb-card>          
+    </form>
+    </nb-layout-column>
+
+</nb-layout>
+
+

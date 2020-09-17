@@ -1,0 +1,210 @@
+<nb-layout>
+  
+    <!-- nav bar start -->
+    <nb-layout-header fixed>
+      <a href="#" (click)="toggle()"><i class="nb-menu"><nb-icon icon="menu-outline" [options]="{ animation: { type: 'pulse' } }"></nb-icon></i></a>
+      <div class="header-container">
+      <nb-actions size="medium"  >
+         <nb-action icon="email-outline"
+                   
+                   title="Invitations"
+                   link="/ViewInvitation"
+                   >
+        </nb-action>
+        <nb-action icon="message-circle-outline"
+                   title="Announcements"
+                   link="/ViewAnnouncement">
+        </nb-action>
+        <nb-action id="user">
+          <nb-user name="{{Person.Name}} {{Person.Surname}}" ></nb-user>
+        </nb-action>
+        <nb-action>
+            <button type="button" nbButton class="btn btn-info" (click)="Logout()">Logout</button>
+        </nb-action>
+       </nb-actions>
+      </div>
+
+
+    </nb-layout-header>
+
+    <nb-sidebar state="compacted">
+            <nb-menu [items]="items"></nb-menu>
+    </nb-sidebar>
+
+    <!-- nav bar end -->
+    <nb-layout-column class="colored-column-basic">
+      <div>
+        <nb-card>
+          <nb-card-header><h2>Weekly Goals</h2></nb-card-header>
+          <nb-card-body>
+            <!-- <form [formGroup]="goalsPost" (ngSubmit)="displayGoal(goalsPost.value)">
+            <label style="margin-right: 135px;">Goal</label><nb-select placeholder="Select Goal" formControlName="goalDescription">
+                <nb-option value="1">Homecell Attendance Goal</nb-option>
+                <nb-option value="2">Church Attendance Goal</nb-option>
+                <nb-option value="3">Zone Homecell Attendance Goal</nb-option>
+              </nb-select>
+              <button class="next-button" nbButton type="submit">Go</button>
+            </form> -->
+
+              <div *ngIf="HCAtt">
+            <div> <h3>Homecell Attendance Goals</h3></div>
+         <div style="float: left;">
+                <button style="background-color: transparent; border:none;float: right; color: white;" routerLink="/SetWeeklyGoal" (click)="submitData(1)"><nb-icon icon="plus-outline" ></nb-icon> Create</button>
+              </div> 
+              <br> <br>
+            <table>
+              <tr style="text-align: center;">
+                <th ></th>
+                <th ></th>
+                <th>Structure</th>
+                <th>HC-L</th>
+                <th>HC-M</th>
+                <th>HC-V</th>
+                <th>HC-FTV</th>
+                <th>HC-S</th>
+                <th><p style="margin-left: 15px;">Feedback</p></th>
+              </tr>
+              <tr *ngFor="let goal of Goals">
+                <td><button style="background-color: transparent; border:none; color: white; margin-right: 50px;" (click)="deleteHomecellAttGoalID(goal)" routerLink="/SearchWeeklyGoal"><nb-icon icon="trash-2-outline" ></nb-icon></button> </td>
+                <td><button style="background-color: transparent; border:none; color: white; margin-right: 50px;" (click)="submitData(goal)" routerLink="/UpdateWeeklyGoal"><nb-icon icon="edit-outline" ></nb-icon></button></td>
+                <td>{{goal.Overseer}}</td>
+                <td>{{goal.Leaders}}</td>
+                <td>{{goal.Members}}</td>
+                <td>{{goal.Visitors}}</td>
+                <td>{{goal.FirstTimeVisitors}}</td>
+                <td>{{goal.Salvations}}</td>
+                <td><button style="background-color: transparent; border:none; color: white; margin-right: 50px;" (click)="submitData(goal)" routerLink="/ReportOnHCAtt" ><nb-icon icon="file-text-outline" ></nb-icon> Feedback</button></td>
+               </tr>
+               </table> <br>
+        
+               <div> <h3>Homecell Attendance Feedback</h3></div>
+         
+                    <br> <br>
+                  <table>
+                    <tr style="text-align: center;">
+                      <th>HC-L</th>
+                      <th>HC-M</th>
+                      <th>HC-V</th>
+                      <th>HC-FTV</th>
+                      <th>HC-S</th>
+                    </tr>
+                    <tr *ngFor="let goal of GoalsFeedback">
+                      <td>{{goal.Leaders}}</td>
+                      <td>{{goal.Members}}</td>
+                      <td>{{goal.Visitors}}</td>
+                      <td>{{goal.FirstTimeVisitors}}</td>
+                      <td>{{goal.Salvations}}</td>
+                     </tr>
+                     </table> <br>
+                    </div>
+        
+                    <div *ngIf="ZHCAtt">
+               <div> <h3>Zone Homecell Attendance Goal</h3></div>
+         <div style="float: left;">
+                <button style="background-color: transparent; border:none;float: right; color: white;" routerLink="/SetWeeklyGoal" (click)="submitData(3)"><nb-icon icon="plus-outline" ></nb-icon> Create</button>
+              </div> 
+              <br> <br>
+            <table>
+              <tr style="text-align: center;">
+                <th ></th>
+                <th ></th>
+                <th>Structure</th>
+                <th>ZHC-L</th>
+                <th>ZHC-M</th>
+                <th>ZHC-V</th>
+                <th>ZHC-FTV</th>
+                <th>ZHC-S</th>
+                <th><p style="margin-left: 15px;">Feedback</p></th>
+              </tr>
+              <tr *ngFor="let goal of ZoneHCGoals">
+                <td><button style="background-color: transparent; border:none; color: white; margin-right: 50px;" (click)="deleteZoneHomecellAttendanceGoalgoalID(goal)" routerLink="/SearchWeeklyGoal"><nb-icon icon="trash-2-outline" ></nb-icon></button> </td>
+                <td><button style="background-color: transparent; border:none; color: white; margin-right: 50px;" (click)="submitData2(goal)" routerLink="/UpdateWeeklyGoal"><nb-icon icon="edit-outline" ></nb-icon></button></td>
+                <td>{{goal.Overseer}}</td>
+                <td>{{goal.Leaders}}</td>
+                <td>{{goal.Members}}</td>
+                <td>{{goal.Visitors}}</td>
+                <td>{{goal.FirstTimeVisitors}}</td>
+                <td>{{goal.Salvations}}</td>
+                <td><button style="background-color: transparent; border:none; color: white; margin-right: 50px;" (click)="submitData(goal)" routerLink="/ZoneHomecellAttendance"><nb-icon icon="file-text-outline" ></nb-icon> Feedback</button></td>
+               </tr>
+               </table> <br>
+        
+               <div> <h3>Zone Homecell Attendance Feedback</h3></div>
+        
+                    <br> <br>
+                  <table>
+                    <tr style="text-align: center;">
+                      <th>ZHC-L</th>
+                      <th>ZHC-M</th>
+                      <th>ZHC-V</th>
+                      <th>ZHC-FTV</th>
+                      <th>ZHC-S</th>
+                    </tr>
+                    <tr *ngFor="let goal of ZoneHCGoalsFeedback">
+                      <td>{{goal.Leaders}}</td>
+                      <td>{{goal.Members}}</td>
+                      <td>{{goal.Visitors}}</td>
+                      <td>{{goal.FirstTimeVisitors}}</td>
+                      <td>{{goal.Salvations}}</td>
+                     </tr>
+                     </table> <br>
+                    </div>
+        
+                    <div *ngIf="CAtt">
+               <div> <h3>Church Attendance Goal</h3></div>
+         <div style="float: left;">
+                <button style="background-color: transparent; border:none;float: right; color: white;" routerLink="/SetWeeklyGoal" (click)="submitData(2)"><nb-icon icon="plus-outline" ></nb-icon> Create</button>
+              </div> 
+              <br> <br>
+            <table>
+              <tr style="text-align: center;">
+                <th ></th>
+                <th ></th>
+                <th>Structure</th>
+                <th>ZHC-L</th>
+                <th>ZHC-M</th>
+                <th>ZHC-V</th>
+                <th>ZHC-FTV</th>
+                <th>ZHC-S</th>
+                <th><p style="margin-left: 15px;">Feedback</p></th>
+              </tr>
+              <tr *ngFor="let goal of ChurchAtt">
+                <td><button style="background-color: transparent; border:none; color: white; margin-right: 50px;" (click)="deleteChurchAttGoalgoalID(goal)" routerLink="/SearchWeeklyGoal"><nb-icon icon="trash-2-outline" ></nb-icon></button> </td>
+                <td><button style="background-color: transparent; border:none; color: white; margin-right: 50px;" (click)="submitData1(goal)" routerLink="/UpdateWeeklyGoal"><nb-icon icon="edit-outline" ></nb-icon></button></td>
+                <td>{{goal.Overseer}}</td>
+                <td>{{goal.Leaders}}</td>
+                <td>{{goal.Member}}</td>
+                <td>{{goal.Visitors}}</td>
+                <td>{{goal.FirstTimeVisitors}}</td>
+                <td>{{goal.Salvations}}</td>
+                <td><button style="background-color: transparent; border:none; color: white; margin-right: 50px;" (click)="submitData(goal)" routerLink="/ReportOnChurchAtt"><nb-icon icon="file-text-outline" ></nb-icon> Feedback</button></td>
+               </tr>
+               </table> <br>
+        
+               <div> <h3>Church Attendance Feedback</h3></div>
+        
+                    <br> <br>
+                  <table>
+                    <tr style="text-align: center;">
+                      <th>HC-L</th>
+                      <th>HC-M</th>
+                      <th>HC-V</th>
+                      <th>HC-FTV</th>
+                      <th>HC-S</th>
+                    </tr>
+                    <tr *ngFor="let goal of ChurchAttFeedback">
+                      <td>{{goal.Leaders}}</td>
+                      <td>{{goal.Member}}</td>
+                      <td>{{goal.Visitors}}</td>
+                      <td>{{goal.FirstTimeVisitors}}</td>
+                      <td>{{goal.Salvations}}</td>
+                     </tr>
+                     </table> <br>
+                    </div>
+          </nb-card-body>
+        </nb-card>
+        </div>
+        
+        
+    </nb-layout-column>
+</nb-layout>

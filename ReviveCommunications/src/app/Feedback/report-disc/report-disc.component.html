@@ -1,0 +1,185 @@
+<nb-layout>
+  
+    <!-- nav bar start -->
+    <nb-layout-header fixed>
+      <a href="#" (click)="toggle()"><i class="nb-menu"><nb-icon icon="menu-outline" [options]="{ animation: { type: 'pulse' } }"></nb-icon></i></a>
+      <div class="header-container">
+      <nb-actions size="medium"  >
+         <nb-action icon="email-outline"
+                   
+                   title="Invitations"
+                   link="/ViewInvitation"
+                   >
+        </nb-action>
+        <nb-action icon="message-circle-outline"
+                   title="Announcements"
+                   link="/ViewAnnouncement">
+        </nb-action>
+        <nb-action id="user">
+            <nb-user name="{{Person.Name}} {{Person.Surname}}" ></nb-user>
+          </nb-action>
+        <nb-action>
+            <button type="button" nbButton class="btn btn-info" (click)="Logout()">Logout</button>
+        </nb-action>
+       </nb-actions>
+      </div>
+
+
+    </nb-layout-header>
+
+    <nb-sidebar state="compacted">
+            <nb-menu [items]="items"></nb-menu>
+    </nb-sidebar>
+
+    <!-- nav bar end -->
+    <nb-layout-column class="colored-column-basic">
+        <form  #ReportOnNMO="ngForm" class="form-group" (ngSubmit)="AddNMOform(ReportOnNMO.value)">
+            <nb-card >
+            
+              <nb-card-header>
+                <div style="float: left;"> <h3>Report on New Member Orientation </h3></div>
+              </nb-card-header>
+            
+            <nb-card-body>
+            
+              <label style="margin-right: 180px;">Date:</label>
+              <input type="date"nbInput  shape="rectangle" name="Date" ngModel #Date="ngModel" required><br><br>
+            
+              <div *ngIf="Date.invalid && (Date.dirty || Date.touched)"
+                  style="color:tomato; float: right">
+                  <div *ngIf="Date.errors.required">
+                      *Date is required.
+                  </div>
+              </div>
+            
+              <label style="margin-right: 215px;">Monthly Total</label>
+              <input type="number" style="width: 100px;" nbInput  shape="rectangle" placeholder="eg. 1" name="MonthTotal" ngModel #MonthTotal="ngModel"  required><br><br>
+            
+              <div *ngIf="MonthTotal.invalid && (MonthTotal.dirty || MonthTotal.touched)"
+                  style="color:tomato; float: right">
+                  <div *ngIf="MonthTotal.errors.required">
+                      *Month Total is required.
+                  </div>
+              </div>
+            
+              <label style="margin-right: 215px;">New member orientation goal ID</label>
+              <input type="number" style="width: 100px;" nbInput  shape="rectangle" placeholder="eg. 1" name="NMOGoalID" ngModel #NMOGoalID="ngModel"  required><br><br>
+            
+              <div *ngIf="NMOGoalID.invalid && (NMOGoalID.dirty || NMOGoalID.touched)"
+                  style="color:tomato; float: right">
+                  <div *ngIf="NMOGoalID.errors.required">
+                      *GoalID is required.
+                  </div>
+              </div>
+            
+              <label style="margin-right: 215px;">Organizational individual Position:</label>
+                        <input type="number" style="width: 100px;" nbInput  shape="rectangle" placeholder="eg. 1"name="OrgIndivPosID" ngModel #OrgIndivPosID="ngModel"  required><br><br>
+                        
+                        <div *ngIf="OrgIndivPosID.invalid && (OrgIndivPosID.dirty || OrgIndivPosID.touched)"
+                            style="color:tomato; float: right">
+                            <div *ngIf="OrgIndivPosID.errors.required">
+                                *OrgIndivPosID is required.
+                            </div>
+                            <div *ngIf="OrgIndivPosID.errors.minlength"> 
+                                *OrgIndivPosID must be full
+                            </div>
+                        </div>
+            
+            </nb-card-body>
+            <nb-card-footer>
+              <button class="next-button" nbButton type="button" style="margin-right: 5px;" routerLink="/ViewOrgStructPos" >Back</button>
+              <button class="next-button" nbButton>Set</button>
+            </nb-card-footer>
+            </nb-card>
+            </form>
+            <form  #ReportDisc="ngForm" class="form-group" (ngSubmit)="AddDiscform(ReportDisc.value)">
+                <nb-card>
+                    <nb-card-header>
+                        <h1>Report on Discipleship</h1>
+                    </nb-card-header>
+                    <nb-card-body>
+                        <label style="margin-right: 180px;">Date:</label>
+                        <input type="date"nbInput  shape="rectangle" name="Date" ngModel #Date="ngModel" minlength="2" required><br><br>
+            
+                        <div *ngIf="Date.invalid && (Date.dirty || Date.touched)"
+                            style="color:tomato; float: right">
+                            <div *ngIf="Date.errors.required">
+                                *Date is required.
+                            </div>
+                        </div>
+            
+                        <label style="margin-right: 215px;">Description:</label>
+                        <input type="text" style="width: 100px;" nbInput  shape="rectangle" name="Description" ngModel #Description="ngModel" minlength="2" required><br><br>
+                        
+                        <div *ngIf="Description.invalid && (Description.dirty || Description.touched)"
+                            style="color:tomato; float: right">
+                            <div *ngIf="Description.errors.required">
+                                *Description is required.
+                            </div>
+                            <div *ngIf="Description.errors.minlength"> 
+                                *Description must be full
+                            </div>
+                        </div>
+            
+                        <label style="margin-right: 215px;">Discipleship Type:</label>
+                        <input type="text" style="width: 100px;" nbInput  shape="rectangle" name="DiscipleshipType" ngModel #DiscipleshipType="ngModel" minlength="2" required><br><br>
+            
+                        <div *ngIf="DiscipleshipType.invalid && (DiscipleshipType.dirty || DiscipleshipType.touched)"
+                            style="color:tomato; float: right">
+                            <div *ngIf="DiscipleshipType.errors.required">
+                                *Discipleship Type is required.
+                            </div>
+                            <div *ngIf="DiscipleshipType.errors.minlength"> 
+                                *Discipleship Type must be full
+                            </div>
+                        </div>
+            
+                        <label style="margin-right: 215px;">Attendace:</label>
+                        <input type="number" style="width: 100px;" nbInput  shape="rectangle" placeholder="eg. 1" name="Attendance" ngModel #Attendance="ngModel" minlength="2" required><br><br>
+            
+                        <div *ngIf="Attendance.invalid && (Attendance.dirty || Attendance.touched)"
+                            style="color:tomato; float: right">
+                            <div *ngIf="Attendance.errors.required">
+                                *Attendance is required.
+                            </div>
+                            <div *ngIf="Attendance.errors.minlength"> 
+                                *Attendance must be full
+                            </div>
+                        </div>
+            
+                        <label style="margin-right: 215px;">Organizational individual Position:</label>
+                        <input type="number" style="width: 100px;" nbInput  shape="rectangle" placeholder="eg. 1"name="OrgIndivPosID" ngModel #OrgIndivPosID="ngModel" minlength="2" required><br><br>
+                        
+                        <div *ngIf="OrgIndivPosID.invalid && (OrgIndivPosID.dirty || OrgIndivPosID.touched)"
+                            style="color:tomato; float: right">
+                            <div *ngIf="Description.errors.required">
+                                *OrgIndivPosID is required.
+                            </div>
+                            <div *ngIf="OrgIndivPosID.errors.minlength"> 
+                                *OrgIndivPosID must be full
+                            </div>
+                        </div>
+            
+                        <label style="margin-right: 215px;">Discipleship Goal ID</label>
+                        <input type="number" style="width: 100px;" nbInput  shape="rectangle" placeholder="eg. 1" name="DiscipleshipGoalID" ngModel #DiscipleshipGoalID="ngModel" minlength="2" required><br><br>
+                      
+                        <div *ngIf="DiscipleshipGoalID.invalid && (DiscipleshipGoalID.dirty || DiscipleshipGoalID.touched)"
+                            style="color:tomato; float: right">
+                            <div *ngIf="DiscipleshipGoalID.errors.required">
+                                *Decipleship ID is required.
+                            </div>
+                            <div *ngIf="Description.errors.minlength"> 
+                                *DiscipleshipGoalID must be full
+                            </div>
+                        </div>
+            
+                    </nb-card-body>
+                    <nb-card-footer>
+                        <button  nbButton  style="margin-right: 5px;">Submit</button>
+                        <button nbButton type="button" style="margin-right: 5px;">Back</button>
+                    </nb-card-footer>
+                </nb-card>
+            </form>
+            
+  </nb-layout-column>
+  </nb-layout>

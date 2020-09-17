@@ -1,0 +1,72 @@
+<nb-layout>
+
+  
+    <!-- nav bar start -->
+    <nb-layout-header fixed>
+      <a href="#" (click)="toggle()"><i class="nb-menu"><nb-icon icon="menu-outline" [options]="{ animation: { type: 'pulse' } }"></nb-icon></i></a>
+      <div class="header-container">
+      <nb-actions size="medium"  >
+         <nb-action icon="email-outline"
+                   
+                   title="Invitations"
+                   link="/ViewInvitation"
+                   >
+        </nb-action>
+        <nb-action icon="message-circle-outline"
+                   title="Announcements"
+                   link="/ViewAnnouncement">
+        </nb-action>
+        <nb-action id="user">
+          <nb-user name="{{Person.Name}} {{Person.Surname}}" ></nb-user>
+        </nb-action>
+        <nb-action>
+            <button type="button" nbButton class="btn btn-info" (click)="Logout()">Logout</button>
+        </nb-action>
+       </nb-actions>
+      </div>
+
+
+    </nb-layout-header>
+
+    <nb-sidebar state="compacted">
+            <nb-menu [items]="items"></nb-menu>
+    </nb-sidebar>
+
+    <!-- nav bar end -->
+    <nb-layout-column class="colored-column-basic">
+
+<nb-card>
+  <nb-card-header>Financial Contribution</nb-card-header>
+
+  <nb-card-body>
+    <form [formGroup]="financialContribution" (ngSubmit)="showBanking(financialContribution.value)">
+      <div class="form-group">
+        <label>Which Church would you like to contribute to:</label>
+        <nb-select placeholder="Select a Church" ngModel formControlName="ChurchBankID">
+          <nb-option *ngFor="let option of options" [value]="option.ChurchBankID">{{option.ChurchName}}</nb-option>
+        </nb-select>
+        <br><br>
+        <input type="submit" nbButton style="margin-right: 20px;" value="Contribute">
+        
+        <button nbButton status="basic">Cancel</button>
+      </div>
+      <br><br>
+
+      <div *ngIf="showTable">
+        <table>
+          <tr *ngFor="let bankinfo of banking">
+            <td>{{bankinfo.AccountName}}</td>
+            <td>{{bankinfo.AccountNumber}}</td>
+            <td>{{bankinfo.Bank}}</td>
+            <td>{{bankinfo.BrancCode}}</td>
+            <td>{{bankinfo.Reference}}</td>
+          </tr>
+        </table>
+      </div>
+
+    </form>
+  </nb-card-body>
+</nb-card>
+</nb-layout-column>
+</nb-layout>
+

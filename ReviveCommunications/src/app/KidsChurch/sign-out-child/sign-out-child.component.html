@@ -1,0 +1,70 @@
+<nb-layout>
+      <!-- nav bar start -->
+    <nb-layout-header fixed>
+      <a href="#" (click)="toggle()"><i class="nb-menu"><nb-icon icon="menu-outline" [options]="{ animation: { type: 'pulse' } }"></nb-icon></i></a>
+      <div class="header-container">
+      <nb-actions size="medium"  >
+         <nb-action icon="email-outline"
+                   
+                   title="Invitations"
+                   link="/ViewInvitation"
+                   >
+        </nb-action>
+        <nb-action icon="message-circle-outline"
+                   title="Announcements"
+                   link="/ViewAnnouncement">
+        </nb-action>
+        <nb-action id="user">
+          <nb-user name="{{Person.Name}} {{Person.Surname}}" ></nb-user>
+        </nb-action>
+        <nb-action>
+            <button type="button" nbButton class="btn btn-info" (click)="Logout()">Logout</button>
+        </nb-action>
+       </nb-actions>
+      </div>
+
+
+    </nb-layout-header>
+
+    <nb-sidebar state="compacted">
+            <nb-menu [items]="items"></nb-menu>
+    </nb-sidebar>
+    <nb-layout-column class="colored-column-basic">
+    <!-- nav bar end -->
+<nb-card>
+    <nb-card-header><h1> Kids Church Sign-Out </h1></nb-card-header>
+  <nb-card-body>
+    <label style="float: right;">Date: 2020-05-16, 8:15 Am</label><br><br>
+    <form [formGroup]="childForm" (ngSubmit)="onClick(childForm.value)">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Child</th>
+                <th>Kids Church</th>
+            </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+                <td><input formControlName="Name" style="background-color: transparent; color: white; border: none"></td>
+                <td><input formControlName="KidsChurchName" style="background-color: transparent; color: white; border: none; width: 400px"><input formControlName="ChildID" hidden></td>
+                <br><br>
+                
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+              <div style="float: right;">
+                <button class="next-button" type="button" nbButton style="margin-right: 5px;" routerLink="/KidsChurch" >Back</button><button class="next-button" nbButton type="submit">Sign-out</button>
+            </div>
+          </td>
+            </tr>
+          
+        </tbody>
+    </table>
+  </form>
+    <br><br>
+  </nb-card-body>
+  </nb-card>
+</nb-layout-column>
+</nb-layout>
